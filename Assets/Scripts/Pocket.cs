@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Pocket : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D item)
     {
         print("triggered - it's in the hole!");
+        StartCoroutine(InTheHole(item));
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    IEnumerator InTheHole(Collider2D item)
     {
-        print("collided - one in the bag");
+        yield return new WaitForSeconds(1);
+        Destroy(item.gameObject);
     }
+
 
 }

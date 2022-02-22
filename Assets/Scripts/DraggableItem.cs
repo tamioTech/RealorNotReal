@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DraggableItem : MonoBehaviour
 {
-    [SerializeField] Transform respawnPoint;
+    
+    
 
     SpriteRenderer ballSprite;
     Vector3 mousePosition;
@@ -20,7 +21,7 @@ public class DraggableItem : MonoBehaviour
     }
     void Update()
     {
-        ResetPosition();
+        
     }
 
     #region MouseStuff
@@ -58,9 +59,5 @@ public class DraggableItem : MonoBehaviour
     }
     #endregion
 
-    private void ResetPosition()
-    {
-        if (!Input.GetKey(KeyCode.R)) { return; }
-        gameObject.transform.position = respawnPoint.position;
-    }
+    
 }
