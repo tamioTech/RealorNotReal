@@ -10,6 +10,11 @@ TagManager:
   - BottomRight
   - BottomCenter
   - BottomLeft
+  - Red
+  - White
+  - Blue
+  - Garbage
+  - EmployeeRoom
   layers:
   - Default
   - TransparentFX

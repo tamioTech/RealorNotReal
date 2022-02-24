@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Furball_Blue
       objectReference: {fileID: 0}
+    - target: {fileID: 3878071694595334217, guid: b3bea75f005cc4362b01951e53866862, type: 3}
+      propertyPath: m_TagString
+      value: Blue
+      objectReference: {fileID: 0}
     - target: {fileID: 3878071694595334228, guid: b3bea75f005cc4362b01951e53866862, type: 3}
       propertyPath: m_Color.b
       value: 0.9811321

@@ -26,17 +26,17 @@ public class DraggableItem : MonoBehaviour
 
     #region MouseStuff
 
-    private void OnMouseOver()
-    {
-        if (dragging) { return; }
-        ballSprite.color = Color.red;
-    }
+    //private void OnMouseOver()
+    //{
+    //    if (dragging) { return; }
+    //    ballSprite.color = Color.red;
+    //}
 
-    private void OnMouseExit()
-    {
-        if (dragging) { return; }
-        ballSprite.color = Color.white;
-    }
+    //private void OnMouseExit()
+    //{
+    //    if (dragging) { return; }
+    //    ballSprite.color = Color.white;
+    //}
 
     private void OnMouseDown()
     {
@@ -50,7 +50,7 @@ public class DraggableItem : MonoBehaviour
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector2(mousePosition.x - deltaX, mousePosition.y - deltaY);
         dragging = true;
-        ballSprite.color = Color.magenta;
+        //ballSprite.color = Color.magenta;
     }
 
     private void OnMouseUp()
@@ -59,5 +59,9 @@ public class DraggableItem : MonoBehaviour
     }
     #endregion
 
-    
+    public void WrongHole()
+    {
+        //send back
+        transform.position = FindObjectOfType<Respawn>().RandomPosition();
+    }
 }

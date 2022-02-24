@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: fbfea6b6d30c8488fb23eaff17d99c27
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Monsier Free
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e258f3b98db9f4c35bd8520bd73fa06c, type: 3}
+  - {fileID: 12800000, guid: 86a270c638e3344f8af094af5c73e770, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
