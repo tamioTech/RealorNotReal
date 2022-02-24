@@ -7,30 +7,45 @@ public class Scoreboard : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI timerText;
-    [SerializeField] int maxTime = 10;
-    [SerializeField] float gameSpeed = .1f;
+    [SerializeField] TextMeshProUGUI levelText;
+    [SerializeField] int level = 0;
 
-    int timeLeft;
+    float timer;
+    int score = 0;
     // Start is called before the first frame update
     void Start()
     {
-        timeLeft = maxTime;
-        timerText.text = timeLeft.ToString();
+        timer = 0;
+        timerText.text = ":" + timer.ToString();
+        levelText.text = ":00";
+        scoreText.text = "$0";
     }
 
     // Update is called once per frame
     void Update()
     {
-        float timer = Mathf.Round(Time.time);
-        print(timer);
-        //timeLeft -= (Mathf.RoundToInt((Time.deltaTime * gameSpeed));
+        timer = Mathf.Round(Time.time);
+        UpdateScoreboard();
+    }
+
+    private void UpdateScoreboard()
+    {
         if (timer < 10)
         {
-            timerText.text = "0" + timer.ToString();
+            timerText.text = ":0" + timer.ToString();
         }
         else
         {
-            timerText.text = timer.ToString();
+            timerText.text = ":" + timer.ToString();
         }
+        if (level < 10)
+        {
+            levelText.text = "0" + level.ToString();
+        }
+        else
+        {
+            levelText.text = level.ToString();
+        }
+        
     }
 }
