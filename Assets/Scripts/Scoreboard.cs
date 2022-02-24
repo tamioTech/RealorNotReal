@@ -16,20 +16,20 @@ public class Scoreboard : MonoBehaviour
     void Start()
     {
         timer = 0;
-        timerText.text = ":" + timer.ToString();
-        levelText.text = ":00";
-        scoreText.text = "$0";
+        UpdateTimerText();
+        UpdateScoreText();
+        UpdateLevelText();
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer = Mathf.Round(Time.time);
-        UpdateScoreboard();
+        UpdateTimerText();
     }
 
-    private void UpdateScoreboard()
+    private void UpdateTimerText()
     {
+        timer = Mathf.Round(Time.time);
         if (timer < 10)
         {
             timerText.text = ":0" + timer.ToString();
@@ -38,6 +38,10 @@ public class Scoreboard : MonoBehaviour
         {
             timerText.text = ":" + timer.ToString();
         }
+    }
+
+    private void UpdateLevelText()
+    {
         if (level < 10)
         {
             levelText.text = "0" + level.ToString();
@@ -46,6 +50,10 @@ public class Scoreboard : MonoBehaviour
         {
             levelText.text = level.ToString();
         }
-        
+    }
+
+    private void UpdateScoreText()
+    {
+        scoreText.text = "$" + score.ToString();
     }
 }

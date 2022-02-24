@@ -4,17 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - TopLeft
-  - TopCenter
-  - TopRight
-  - BottomRight
-  - BottomCenter
-  - BottomLeft
-  - Red
   - White
-  - Blue
   - Garbage
   - EmployeeRoom
+  - RealItem
+  - FakeItem
   layers:
   - Default
   - TransparentFX
