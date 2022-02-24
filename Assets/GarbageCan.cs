@@ -6,19 +6,18 @@ public class GarbageCan : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D item)
     {
-        print("triggered - it's in the hole! ANALYZING...");
-        if (item.tag != "GarbagCan")
+        print("triggered - it's in the can! ANALYZING...");
+        if (item.tag == "RealItem")
         {
-            StartCoroutine(SpitBallOut(item));
+            print("Real Item thrown out");
+            StartCoroutine(InTheGarbage(item));
         }
-        else
+        else if (item.tag == "FakeItem")
         {
+            print("Fake Item thrown out");
             StartCoroutine(InTheGarbage(item));
         }
     }
-
-    
-
 
     IEnumerator InTheGarbage(Collider2D item)
     {
@@ -26,14 +25,4 @@ public class GarbageCan : MonoBehaviour
         Destroy(item.gameObject);
     }
 
-    IEnumerator SpitBallOut(Collider2D item)
-    {
-        yield return new WaitForSeconds(1);
-        item.gameObject.transform.position = FindObjectOfType<Respawn>().RandomPosition();
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        print("collision");
-    }
 }

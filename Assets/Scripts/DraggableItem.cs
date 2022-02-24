@@ -11,13 +11,11 @@ public class DraggableItem : MonoBehaviour
     Vector3 mousePosition;
     float deltaX;
     float deltaY;
-    bool dragging;
 
 
     void Start()
     {
         ballSprite = gameObject.GetComponent<SpriteRenderer>();
-        dragging = false;
     }
     void Update()
     {
@@ -49,13 +47,11 @@ public class DraggableItem : MonoBehaviour
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector2(mousePosition.x - deltaX, mousePosition.y - deltaY);
-        dragging = true;
         //ballSprite.color = Color.magenta;
     }
 
     private void OnMouseUp()
     {
-        dragging = false;
     }
     #endregion
 

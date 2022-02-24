@@ -6,29 +6,22 @@ public class EmployeeRoom : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D item)
     {
-        print("triggered");
-        print("triggered - it's in the hole! ANALYZING...");
-        if (item.tag != "EmployeeRoom")
+        print("triggered - it's in the back! ANALYZING...");
+        if (item.tag == "RealItem")
         {
-            StartCoroutine(SpitBallOut(item));
+            print("Real Item saved in the back");
+            StartCoroutine(InTheGarbage(item));
         }
-        else
+        else if (item.tag == "FakeItem")
         {
-            StartCoroutine(InTheBackroom(item));
+            print("Fake Item saved in the back");
+            StartCoroutine(InTheGarbage(item));
         }
     }
 
-
-    IEnumerator InTheBackroom(Collider2D item)
+    IEnumerator InTheGarbage(Collider2D item)
     {
         yield return new WaitForSeconds(1);
         Destroy(item.gameObject);
     }
-
-    IEnumerator SpitBallOut(Collider2D item)
-    {
-        yield return new WaitForSeconds(1);
-        item.gameObject.transform.position = FindObjectOfType<Respawn>().RandomPosition();
-    }
-
 }
