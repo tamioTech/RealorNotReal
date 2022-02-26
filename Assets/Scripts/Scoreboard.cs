@@ -12,7 +12,7 @@ public class Scoreboard : MonoBehaviour
 
     float timer;
     int score = 0;
-    // Start is called before the first frame update
+
     void Start()
     {
         timer = 0;
@@ -21,7 +21,7 @@ public class Scoreboard : MonoBehaviour
         UpdateLevelText();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         UpdateTimerText();
@@ -55,5 +55,11 @@ public class Scoreboard : MonoBehaviour
     private void UpdateScoreText()
     {
         scoreText.text = "$" + score.ToString();
+    }
+
+    public void AddToScore(int amount)
+    {
+        score += amount;
+        UpdateScoreText();
     }
 }

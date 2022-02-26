@@ -2,20 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EmployeeRoom : MonoBehaviour
+public class GarbageCan : MonoBehaviour
 {
+    int cost;
+
     private void OnTriggerEnter2D(Collider2D item)
     {
-        print("triggered - it's in the back! ANALYZING...");
+        print("triggered - it's in the can! ANALYZING...");
+        cost = FindObjectOfType<DraggableItem>().GetCost();
         if (item.tag == "RealItem")
         {
-            print("Real Item saved in the back");
+            FindObjectOfType<Scoreboard>().AddToScore(-cost);
+            print("Real Item thrown out");
             StartCoroutine(InTheGarbage(item));
         }
         else if (item.tag == "FakeItem")
         {
-            print("Fake Item saved in the back");
+            FindObjectOfType<Scoreboard>().AddToScore(1);
+            print("Fake Item thrown out");
             StartCoroutine(InTheGarbage(item));
+
         }
     }
 
@@ -24,4 +30,5 @@ public class EmployeeRoom : MonoBehaviour
         yield return new WaitForSeconds(1);
         Destroy(item.gameObject);
     }
+
 }

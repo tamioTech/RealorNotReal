@@ -24,8 +24,8 @@ public class Respawn : MonoBehaviour
         int rngPrefab = Random.Range(0, prefab.Length);
         
         if (!Input.GetKey(KeyCode.R)) { return; }
-        //gameObject.transform.position = respawnPoint.position;
-        Instantiate(prefab[rngPrefab], RandomPosition(), Quaternion.identity);
+
+        Instantiate(prefab[rngPrefab], RandomPosition(), Quaternion.EulerRotation(0,0,Random.Range(0f,360f)));
 
     }
 

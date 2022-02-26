@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 335ff7ac54b554dd4969956ccb285434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cost: 50
 --- !u!50 &5110618535411953498
 Rigidbody2D:
   serializedVersion: 4
@@ -169,7 +170,7 @@ Transform:
   m_GameObject: {fileID: 6420615567214451393}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.34, y: -0.73, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 6420615567182803439}
   m_Father: {fileID: 0}

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DraggableItem : MonoBehaviour
 {
-    
-    
+    [SerializeField] int cost;
+    public int GetCost() { return cost; }
 
     SpriteRenderer ballSprite;
     Vector3 mousePosition;
