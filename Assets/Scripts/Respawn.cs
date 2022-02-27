@@ -13,6 +13,8 @@ public class Respawn : MonoBehaviour
     float timer;
     float startTimerTime;
 
+    bool gameStarted;
+
     void Start()
     {
         //InvokeRepeating("Spawner", spawnTime, spawnTime);
@@ -26,6 +28,7 @@ public class Respawn : MonoBehaviour
 
     public void SpawnItem()
     {
+        if (!gameStarted) { return; }
         currentTime = Time.time - startTimerTime;
         timer = Mathf.Round(currentTime * gameSpeed);
         print(timer);
