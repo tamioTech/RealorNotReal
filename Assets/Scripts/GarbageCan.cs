@@ -6,51 +6,55 @@ public class GarbageCan : MonoBehaviour
 {
     int cost;
 
+    [SerializeField] UnityEngine.AudioClip coin1;
+    [SerializeField] UnityEngine.AudioClip denden1;
+    AudioSource audioSource;
+    GameObject parentObj;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     private void OnTriggerStay2D(Collider2D item)
     {
         if (Input.GetMouseButton(0)) { return; }
         print("triggered - it's in the can! ANALYZING...");
         cost = FindObjectOfType<DraggableItem>().GetCost();
+
         if (item.tag == "RealItem")
         {
-            FindObjectOfType<Scoreboard>().AddToScore(-cost);
+            
             print("Real Item thrown out");
-            Destroy(item.gameObject);
-            //StartCoroutine(InTheGarbage(item));
+            //StartCoroutine(PlayBadAudio(item.gameObject));
+            //FindObjectOfType<AudioClip>().PlayBadSound();
+            BadSort(item.gameObject);
+            
         }
         else if (item.tag == "FakeItem")
         {
-            FindObjectOfType<Scoreboard>().AddToScore(1);
             print("Fake Item thrown out");
-            //StartCoroutine(InTheGarbage(item));
-            Destroy(item.gameObject);
+            //FindObjectOfType<AudioClip>().PlayGoodSound();
+            //StartCoroutine(PlayGoodAudio(item.gameObject));
+            GoodSort(item.gameObject);
         }
     }
 
-    //private void OnTriggerEnter2D(Collider2D item)
-    //{
-    //    if (Input.GetMouseButton(0)) { return; }
-    //    print("triggered - it's in the can! ANALYZING...");
-    //    cost = FindObjectOfType<DraggableItem>().GetCost();
-    //    if (item.tag == "RealItem")
-    //    {
-    //        FindObjectOfType<Scoreboard>().AddToScore(-cost);
-    //        print("Real Item thrown out");
-    //        StartCoroutine(InTheGarbage(item));
-    //    }
-    //    else if (item.tag == "FakeItem")
-    //    {
-    //        FindObjectOfType<Scoreboard>().AddToScore(1);
-    //        print("Fake Item thrown out");
-    //        StartCoroutine(InTheGarbage(item));
+    private void GoodSort(GameObject item)
+    {
+        AudioSource.PlayClipAtPoint(coin1, Camera.main.transform.position);
 
-    //    }
-    //}
+        FindObjectOfType<Scoreboard>().AddToScore(1);
+        Destroy(item);
+    }
 
-    //IEnumerator InTheGarbage(Collider2D item)
-    //{
-    //    yield return new WaitForSeconds(1);
-    //    Destroy(item.gameObject);
-    //}
+    private void BadSort(GameObject item)
+    {
+        AudioSource.PlayClipAtPoint(denden1, Camera.main.transform.position);
 
+        FindObjectOfType<Scoreboard>().AddToScore(-cost);
+        Destroy(item);
+    }
 }
+
+

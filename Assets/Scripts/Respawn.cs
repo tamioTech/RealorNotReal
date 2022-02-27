@@ -8,17 +8,14 @@ public class Respawn : MonoBehaviour
     [SerializeField] GameObject[] prefab;
     [SerializeField] float spawnTime = 5f;
 
-    // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("Spawner", spawnTime, spawnTime);
     }
 
-    // Update is called once per frame
     void Update()
     {
         ResetPosition();
-        //Spawner();
     }
 
     private void Spawner()
@@ -29,8 +26,8 @@ public class Respawn : MonoBehaviour
 
     private void ResetPosition()
     {
-        int rngPrefab = Random.Range(0, prefab.Length);
         if (!Input.GetKeyDown(KeyCode.R)) { return; }
+        int rngPrefab = Random.Range(0, prefab.Length);
 
         Instantiate(prefab[rngPrefab], RandomPosition(), Quaternion.EulerRotation(0,0,Random.Range(0f,360f)));
 

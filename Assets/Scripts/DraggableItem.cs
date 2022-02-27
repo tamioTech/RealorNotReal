@@ -7,7 +7,6 @@ public class DraggableItem : MonoBehaviour
     [SerializeField] int cost;
     public int GetCost() { return cost; }
 
-    SpriteRenderer ballSprite;
     Vector3 mousePosition;
     float deltaX;
     float deltaY;
@@ -15,26 +14,11 @@ public class DraggableItem : MonoBehaviour
 
     void Start()
     {
-        ballSprite = gameObject.GetComponent<SpriteRenderer>();
     }
     void Update()
     {
         
     }
-
-    #region MouseStuff
-
-    //private void OnMouseOver()
-    //{
-    //    if (dragging) { return; }
-    //    ballSprite.color = Color.red;
-    //}
-
-    //private void OnMouseExit()
-    //{
-    //    if (dragging) { return; }
-    //    ballSprite.color = Color.white;
-    //}
 
     private void OnMouseDown()
     {
@@ -47,17 +31,9 @@ public class DraggableItem : MonoBehaviour
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector2(mousePosition.x - deltaX, mousePosition.y - deltaY);
-        //ballSprite.color = Color.magenta;
     }
 
     private void OnMouseUp()
     {
-    }
-    #endregion
-
-    public void WrongHole()
-    {
-        //send back
-        transform.position = FindObjectOfType<Respawn>().RandomPosition();
     }
 }

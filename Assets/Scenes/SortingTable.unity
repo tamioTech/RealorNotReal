@@ -334,6 +334,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac694af9107db46f3a989e968f994cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coin1: {fileID: 8300000, guid: 652e9d02b2ce54b8aaedc7b6ca2cea2a, type: 3}
+  denden1: {fileID: 8300000, guid: 3b9aa2129f5604a2eb1da4ec41c5330a, type: 3}
 --- !u!61 &285970072
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -649,6 +651,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c537af4044a6843beac22285692bca95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coin1: {fileID: 8300000, guid: b30fa56909dbf4e4ca474b9fe01050ae, type: 3}
+  denden1: {fileID: 8300000, guid: 3b9aa2129f5604a2eb1da4ec41c5330a, type: 3}
 --- !u!1 &566900397
 GameObject:
   m_ObjectHideFlags: 0
