@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 543768903441658447}
   m_Layer: 0
   m_Name: shoes_fake
-  m_TagString: RealItem
+  m_TagString: FakeItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,7 +163,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 4.810236, y: 9.957188}
+  m_Offset: {x: -4.60448, y: 1.339808}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -174,5 +174,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.59597, y: 4.2146616}
+  m_Size: {x: 7.289301, y: 3.5399904}
   m_EdgeRadius: 0

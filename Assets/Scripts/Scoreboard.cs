@@ -9,9 +9,13 @@ public class Scoreboard : MonoBehaviour
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] TextMeshProUGUI levelText;
     [SerializeField] int level = 0;
+    [SerializeField] float gameSpeed = 1f;
 
     float timer;
+    float startTimerTime;
+    float currentTime;
     int score = 0;
+
 
     void Start()
     {
@@ -19,6 +23,7 @@ public class Scoreboard : MonoBehaviour
         UpdateTimerText();
         UpdateScoreText();
         UpdateLevelText();
+        startTimerTime = Time.time;
     }
 
 
@@ -29,7 +34,16 @@ public class Scoreboard : MonoBehaviour
 
     private void UpdateTimerText()
     {
-        timer = Mathf.Round(Time.time);
+        currentTime = Time.time - startTimerTime;
+        timer = Mathf.Round(currentTime * gameSpeed) ;
+        if (timer > 59)
+        {
+            timer = 0;
+            startTimerTime = Time.time;
+            level++;
+            FindObjectOfType<Respawn>().spawnTime -= 0.7f;
+            UpdateLevelText();
+        }
         if (timer < 10)
         {
             timerText.text = ":0" + timer.ToString();
@@ -38,7 +52,9 @@ public class Scoreboard : MonoBehaviour
         {
             timerText.text = ":" + timer.ToString();
         }
+
     }
+
 
     private void UpdateLevelText()
     {
@@ -50,6 +66,7 @@ public class Scoreboard : MonoBehaviour
         {
             levelText.text = level.ToString();
         }
+
     }
 
     private void UpdateScoreText()

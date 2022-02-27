@@ -6,22 +6,37 @@ public class Respawn : MonoBehaviour
 {
     [SerializeField] Transform respawnPoint;
     [SerializeField] GameObject[] prefab;
-    [SerializeField] float spawnTime = 5f;
+    [SerializeField] public float spawnTime = 5f;
+    [SerializeField] float gameSpeed = 1f;
+
+    float currentTime;
+    float timer;
+    float startTimerTime;
 
     void Start()
     {
-        InvokeRepeating("Spawner", spawnTime, spawnTime);
+        //InvokeRepeating("Spawner", spawnTime, spawnTime);
     }
 
     void Update()
     {
         ResetPosition();
+        SpawnItem();
     }
 
-    private void Spawner()
+    public void SpawnItem()
     {
-        int rngPrefab = Random.Range(0, prefab.Length);
-        Instantiate(prefab[rngPrefab], RandomPosition(), Quaternion.EulerRotation(0, 0, Random.Range(0f, 360f)));
+        currentTime = Time.time - startTimerTime;
+        timer = Mathf.Round(currentTime * gameSpeed);
+        print(timer);
+        if (timer > spawnTime)
+        {
+            int rngPrefab = Random.Range(0, prefab.Length);
+            Instantiate(prefab[rngPrefab], RandomPosition(), Quaternion.EulerRotation(0, 0, Random.Range(0f, 360f)));
+            startTimerTime = Time.time;
+            timer = 0;
+        }
+
     }
 
     private void ResetPosition()
@@ -36,8 +51,8 @@ public class Respawn : MonoBehaviour
     public Vector3 RandomPosition()
     {
         print("RandomPosition()");
-        float rngX = Random.Range(-5f, 5f);
-        float rngY = Random.Range(-2f, 2f);
+        float rngX = Random.Range(-4.5f, 4.5f);
+        float rngY = Random.Range(-1.5f, 1.5f);
         Vector3 rndPos = new Vector3(rngX, rngY, 0);
         print("Return: " + rndPos);
         return rndPos;

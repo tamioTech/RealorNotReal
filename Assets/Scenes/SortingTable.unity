@@ -689,6 +689,7 @@ MonoBehaviour:
   timerText: {fileID: 768896174}
   levelText: {fileID: 324506656}
   level: 0
+  gameSpeed: 2.74
 --- !u!114 &566900399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1455,4 +1456,14 @@ MonoBehaviour:
   prefab:
   - {fileID: 8018467995890142630, guid: eda966ee6e48141ddb327c9e378a0616, type: 3}
   - {fileID: 6420615567214451393, guid: 7750957d332fb48aab23c0427aa70cf4, type: 3}
+  - {fileID: 3756426843723225623, guid: 5b6b6fef7140b4161aff3561194c2a82, type: 3}
+  - {fileID: 827512561104620073, guid: b8cf675c0f5c64fdcbac4d16a47b149e, type: 3}
+  - {fileID: 8878762833315038372, guid: bf7a177fb528d49a0bf7502c7be67059, type: 3}
+  - {fileID: 1057764626406091734, guid: 3ce9e55bc2e2f409b9951d44d328b8b4, type: 3}
+  - {fileID: 7899236590983407609, guid: bfb37a84722c2430086573379bea16cd, type: 3}
+  - {fileID: 5984869157690288781, guid: 43382c0b8dac2478d8fd8d43f5e44fe6, type: 3}
+  - {fileID: 3958188775972820101, guid: 0118374d8848e409485d901a8ce1250b, type: 3}
+  - {fileID: 7591457243799742503, guid: d00d809395f394d38a729110a2ee272e, type: 3}
+  - {fileID: 1324969721447473629, guid: 71c6959c729904ca4b7a1575515fd826, type: 3}
   spawnTime: 5
+  gameSpeed: 1
