@@ -13,7 +13,7 @@ public class Respawn : MonoBehaviour
     float timer;
     float startTimerTime;
 
-    bool gameStarted;
+    public bool gameStarted;
 
     void Start()
     {
@@ -31,7 +31,7 @@ public class Respawn : MonoBehaviour
         if (!gameStarted) { return; }
         currentTime = Time.time - startTimerTime;
         timer = Mathf.Round(currentTime * gameSpeed);
-        print(timer);
+        //print(timer);
         if (timer > spawnTime)
         {
             int rngPrefab = Random.Range(0, prefab.Length);
@@ -53,11 +53,11 @@ public class Respawn : MonoBehaviour
 
     public Vector3 RandomPosition()
     {
-        print("RandomPosition()");
-        float rngX = Random.Range(-4.5f, 4.5f);
-        float rngY = Random.Range(-1.5f, 1.5f);
+        //print("RandomPosition()");
+        float rngX = Random.Range(-4.5f, 3.2f);
+        float rngY = Random.Range(-2f, 0f);
         Vector3 rndPos = new Vector3(rngX, rngY, 0);
-        print("Return: " + rndPos);
+        //print("Return: " + rndPos);
         return rndPos;
     }
 

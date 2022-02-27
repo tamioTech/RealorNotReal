@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class SavedInfo : MonoBehaviour
+public class GameOverMenu : MonoBehaviour
 {
-    int finalScore;
+    [SerializeField] TextMeshProUGUI finalScoreText;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        finalScoreText.text = "$"+FindObjectOfType<GameMusic>().finalScore.ToString();
     }
 
     // Update is called once per frame
@@ -17,8 +19,5 @@ public class SavedInfo : MonoBehaviour
         
     }
 
-    public void FinalScore(int score)
-    {
-        finalScore = score;
-    }
+
 }

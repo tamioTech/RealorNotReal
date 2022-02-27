@@ -999,7 +999,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Meow...i need your help!  I'm getting overrun with fake meowchandise. 
+  m_text: Meow...i need your help!  The PAW-nstore getting overrun with fake meowchandise. 
     Help me put the "REAL" items in the employee only room and the "fake" items in
     the garbage!  We only have until 08:00 until the store opens up meow....
   m_isRightToLeft: 0
@@ -1120,7 +1120,6 @@ GameObject:
   - component: {fileID: 1281032281}
   - component: {fileID: 1281032283}
   - component: {fileID: 1281032282}
-  - component: {fileID: 1281032284}
   m_Layer: 0
   m_Name: Game Music
   m_TagString: Untagged
@@ -1154,6 +1153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb4c94aca7f24cc3ba09f222bfe40f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalScore: 0
 --- !u!82 &1281032283
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1165,7 +1165,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 32c1a1171fb364f049d3a643b9fffa46, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.863
   m_Pitch: 1
   Loop: 1
@@ -1250,18 +1250,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1281032284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1281032280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa9afcbcc140f467d90c28ebf9aa09f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1465022789
 GameObject:
   m_ObjectHideFlags: 0
@@ -1623,6 +1611,7 @@ MonoBehaviour:
   - {fileID: 6420615567214451393, guid: 7750957d332fb48aab23c0427aa70cf4, type: 3}
   spawnTime: 5
   gameSpeed: 1
+  gameStarted: 0
 --- !u!1001 &3958188775907008307
 PrefabInstance:
   m_ObjectHideFlags: 0

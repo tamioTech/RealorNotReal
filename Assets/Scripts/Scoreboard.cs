@@ -8,18 +8,21 @@ public class Scoreboard : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] TextMeshProUGUI levelText;
-    [SerializeField] int level = 0;
+    [SerializeField] public int level = 0;
     [SerializeField] float gameSpeed = 1f;
 
     float timer;
     float startTimerTime;
     float currentTime;
-    int score = 0;
+    public int score = 0;
 
-
+    
+    
     void Start()
     {
         timer = 0;
+        score = 0;
+        level = 0;
         UpdateTimerText();
         UpdateScoreText();
         UpdateLevelText();
@@ -36,12 +39,16 @@ public class Scoreboard : MonoBehaviour
     {
         currentTime = Time.time - startTimerTime;
         timer = Mathf.Round(currentTime * gameSpeed) ;
+        
         if (timer > 59)
         {
             timer = 0;
             startTimerTime = Time.time;
+            
             level++;
-            FindObjectOfType<Respawn>().spawnTime -= 0.7f;
+            print("PLUS A LEVEL");
+            print("spawnTime: " + FindObjectOfType<Respawn>().spawnTime);
+            FindObjectOfType<Respawn>().spawnTime -= 0.6f;
             UpdateLevelText();
         }
         if (timer < 10)
@@ -58,6 +65,7 @@ public class Scoreboard : MonoBehaviour
 
     private void UpdateLevelText()
     {
+        
         if (level < 10)
         {
             levelText.text = "0" + level.ToString();
@@ -66,7 +74,18 @@ public class Scoreboard : MonoBehaviour
         {
             levelText.text = level.ToString();
         }
+        print("currentLevel = " + level);
+        if(level>7)
+        {
 
+            FindObjectOfType<GameMusic>().UpdateFinalScore();
+
+            timer = 0;
+            level = 0;
+            FindObjectOfType<Respawn>().spawnTime = 5f;
+            FindObjectOfType<SceneLoader>().LoadGameOverScreen();
+
+        }
     }
 
     private void UpdateScoreText()
@@ -78,5 +97,10 @@ public class Scoreboard : MonoBehaviour
     {
         score += amount;
         UpdateScoreText();
+    }
+
+    public void RestartLevel()
+    {
+
     }
 }
