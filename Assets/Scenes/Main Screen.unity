@@ -237,6 +237,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &204229559 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3958188775972820100, guid: 0118374d8848e409485d901a8ce1250b, type: 3}
+  m_PrefabInstance: {fileID: 3958188775907008307}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9000947685364a2a9486391db47c04c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &214543087
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,8 +678,8 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 2
-  m_MatchWidthOrHeight: 0
+  m_ScreenMatchMode: 1
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -989,14 +1000,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Meow...i need your help!
-
-    I''m getting over run with
-
-    fake meowchandise.
+  m_text: 'Meow...i need your help! I''m getting over run with fake meowchandise.
 
     help
-    me put the real items in the employee only room and the fake items in the garbage!'
+    me put the "REAL" items in the employee only room and the "FAKE" items in the
+    garbage!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 93495a1c0096c4b2496a2ec06ab34576, type: 2}
   m_sharedMaterial: {fileID: 6237471692183334382, guid: 93495a1c0096c4b2496a2ec06ab34576, type: 2}
@@ -1505,7 +1513,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1928401159}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 204229559}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: StartButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &1928401159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1592,3 +1612,60 @@ MonoBehaviour:
   - {fileID: 8018467995890142630, guid: eda966ee6e48141ddb327c9e378a0616, type: 3}
   - {fileID: 6420615567214451393, guid: 7750957d332fb48aab23c0427aa70cf4, type: 3}
   spawnTime: 5
+--- !u!1001 &3958188775907008307
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3958188775972820101, guid: 0118374d8848e409485d901a8ce1250b, type: 3}
+      propertyPath: m_Name
+      value: SceneLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958188775972820107, guid: 0118374d8848e409485d901a8ce1250b, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958188775972820107, guid: 0118374d8848e409485d901a8ce1250b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958188775972820107, guid: 0118374d8848e409485d901a8ce1250b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958188775972820107, guid: 0118374d8848e409485d901a8ce1250b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958188775972820107, guid: 0118374d8848e409485d901a8ce1250b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958188775972820107, guid: 0118374d8848e409485d901a8ce1250b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958188775972820107, guid: 0118374d8848e409485d901a8ce1250b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958188775972820107, guid: 0118374d8848e409485d901a8ce1250b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958188775972820107, guid: 0118374d8848e409485d901a8ce1250b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958188775972820107, guid: 0118374d8848e409485d901a8ce1250b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958188775972820107, guid: 0118374d8848e409485d901a8ce1250b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0118374d8848e409485d901a8ce1250b, type: 3}
